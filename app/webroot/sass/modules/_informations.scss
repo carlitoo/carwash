@@ -1,0 +1,6 @@
+.informations__map{
+    @extend .l-constrained;    
+    margin-top: 40px;
+    @include container;
+    border-bottom: 3px solid $rouge;
+}

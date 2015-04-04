@@ -1,0 +1,30 @@
+/**
+ * FICHIER SCSS GÉNÉRAL
+ * - C'est ici qu'on indique quels fichiers scss compiler
+ * - L'ordre est important !
+ */
+
+@import
+    // Vendors
+    "susy",
+    // Base
+    "base/variables",
+    "base/mixins",     
+    "base/normalize",
+    "base/buttons",
+    // Layout
+    "layout/buttons",
+    "layout/header",
+    "layout/main",
+    "layout/footer",
+    // Modules
+    "modules/intro",
+    "modules/cars",
+    "modules/car",
+    "modules/services",
+    "modules/garage",
+    "modules/informations",
+    "modules/poids-lourds"
+    // États
+    /*"frontoffice/states"*/
+    ;

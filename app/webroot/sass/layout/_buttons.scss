@@ -1,0 +1,22 @@
+/**
+ * BOUTONS
+ */
+
+.l-button {
+    font-size: 14px;
+    font-size: .8125rem;
+    color: $blanc;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+    display: inline-block;
+    padding: 8px 18px 4px;
+    border-bottom: 4px solid $rouge;
+    background-color: $rouge;
+    transition: background-color .5s ease-out;
+    
+    &:hover {
+        background-color: $noir;
+        text-decoration: none;
+    }
+}

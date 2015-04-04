@@ -1,0 +1,239 @@
+/**
+ * LISTE DE VOITURES
+ * - Grille Susy à 2/4 colonnes
+ */
+
+// Conteneur grille, contrainte
+.cars {
+    @extend .l-constrained;
+    margin-top: 40px;
+    @include container;
+}
+// Colonne pour une grille de 2 colonnes
+.cars__column2 {    
+    @include span-columns(3, 6);
+
+    &:nth-child(2) {
+        @include omega;
+    }
+}
+// Colonne pour une grille de 3 colonnes
+.cars__column3 {    
+    @include span-columns(2, 6);
+    
+    &:nth-child(3) {
+        @include omega;
+    }
+}
+// Colonne pour une grille de 4 colonnes
+.cars__column3 {
+    @include span-columns(4, 12);
+
+    &:nth-child(3n) {
+        @include omega();
+    }    
+}
+// Conteneur de la colonne
+.cars__column__container {
+    display: block;
+    background: url(../img/cars-border.png) no-repeat top left;
+    padding-top: 18px;
+
+    &:hover .cars__header {
+        background-color: $rouge;
+    }
+    &:hover .cars__header__title, &:hover .cars__header__price {
+        color: $blanc;
+    }
+    &:hover .cars__figure > img:nth-child(2) {
+        top: 0;
+        opacity: 1;
+    }
+}
+// Conteneur photos voiture
+.cars__figure {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 65.6%;
+    overflow: hidden;
+
+    & > img {
+        width: 100%;
+    }
+    & > img:nth-child(2) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        transition: opacity .5s ease, top .5s ease;
+    }
+}
+// Conteneur titre + prix voiture
+.cars__header {
+    height: 20px;
+    padding: 14px 20px;
+    background-color: $blanc;
+    border-top: 5px solid $rouge;
+    transition: background-color .5s ease;
+}
+.cars__header__title {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    font-size: .875em;
+    font-weight: 700;
+    color: $rouge;
+    transition: color .5s ease;
+
+    & > small {
+        font-weight: 400;
+        font-size: .8571428571428571em; /* 12px */
+        color: $noir;
+    }
+}
+.cars__header__price {
+    float: right;
+
+    font-size: 1.125em;
+    font-weight: 800;
+    color: $noir;
+    line-height: 1;
+    transition: color .5s ease;
+}
+
+.cars__title{
+    font-size: 16px;
+    font-weight: 700; 
+}
+// Conteneur formulaire de recherche et de trie
+.cars__search{
+    @include clearfix();
+    @media screen and(max-width :768px){
+        @include span-columns(6,6);
+    }
+}
+
+.cars__search__content{
+    @include clearfix();
+    padding: 20px;
+    background: $noir;
+    & > .cars__title{
+        color: $blanc;
+    }
+    @media screen and (max-width:960px){
+        padding:0 0 0 1px;
+    }
+    @media screen and (max-width:768px){
+        padding:20px 20px 10px 20px;
+    }
+}
+
+.cars__search__label{
+    margin-bottom:5px;
+    float:left;
+    width:100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: $blanc;
+}
+
+// Conteneur img vehicule + kilometrage + prix
+.cars_block{
+    position: relative;    
+    color: $noir;
+    
+    @media screen and(max-width:760px){
+        @include span-columns(3, 6);
+
+        &:nth-child(2n) {
+            @include omega();
+            float:left;
+        }
+/*        &:nth-child(2n) {
+            float:left;
+        }*/
+    }
+}
+
+.cars_block:hover{
+    color: $rouge;
+    & > .cars__results{
+        background: $blanc; 
+        & > .cars__results__img{
+            border-bottom: 5px solid $rouge; 
+        }
+    }
+    .cars__results:before{
+        border-top: 5px solid $rouge;
+        border-left: 5px solid $rouge;
+    }
+
+    .cars__results:after{
+        border-bottom: 5px solid $rouge;
+        border-right: 5px solid $rouge;
+    }    
+}
+
+.cars__results{
+    padding: 20px;          
+}
+
+// effet coin triangle 
+.cars__results:before{
+    content: "";
+    position: absolute;
+    top: 44px;
+    left:0;
+    border-top: 1px solid $noir;
+    border-left: 1px solid $noir;
+    height: 35px;
+    width: 35px;
+    display: block;
+}
+
+.cars__results:after{
+    content: "";
+    position: absolute;
+    bottom:0;
+    right: 0;
+    border-bottom: 1px solid $noir;
+    border-right: 1px solid $noir;
+    height: 35px;
+    width: 35px;
+    display: block;
+}
+
+.cars__results__img{
+    height: 0;
+    padding-bottom: 65%;
+    overflow: hidden;
+    border-bottom: 5px solid $noir;
+    & > a{
+        & > img{
+            width: 100%;                        
+        }
+    }
+}
+
+.cars__results__infos{
+    @include clearfix();
+    margin: 20px 0 0px 0;
+    line-height: 15px;
+}
+
+.cars__results__km{
+    float: left;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.cars__results__prix{
+    float: right;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+

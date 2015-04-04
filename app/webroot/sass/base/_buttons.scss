@@ -1,0 +1,53 @@
+/**
+ * BOUTONS
+ * - Module général
+ */
+
+// Styles communs des boutons
+.btn {
+    display: inline-block;
+    padding: 5px 20px;
+    margin-top: 10px;
+    border: none;
+    
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color .2s ease;
+}
+
+// Sous-classe par défaut
+.btn--default {
+    background-color: $rouge;
+    color: $blanc;
+    
+    &:hover {
+        color: $blanc;
+        background-color: $rougeFonce;
+    }
+}
+
+// Version pour form  recherche
+.btn--search{    
+    float:left;
+    margin-top: 1px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid $turquoise;
+    background: $noir;
+    color: $turquoise;
+    font-size: 12px;
+    font-weight: 700;
+    
+}
+.btn--search:hover{
+    background: $turquoise;
+    color: $blanc;
+}
+
+.btn--search:focus{
+    background: $turquoise;
+    color: $blanc;
+}

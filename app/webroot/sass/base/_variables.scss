@@ -1,0 +1,28 @@
+/**
+ * VARIABLES DE CONFIG
+ * - Susy
+ * - Familles de fonts
+ * - Couleurs
+ */
+// Configuration largeur maximum
+$width-constrained: 960px;
+$width-constrained-large: 1100px;
+// Couleurs
+$noir: #2a313b;
+$noirPure: #000;
+$blanc: #fff;
+$rouge: #0A003D;
+$rougeFonce: #060024;
+$turquoise: #19cfb7;
+
+// Familles de font
+$font-texte: "Open Sans", Arial, sans-serif;
+$font-titre: "Spinnaker", Arial, sans-serif;
+
+// CONFIGURATION "SUSY" (système de grille)
+$total-columns: 12;
+$column-width: 4rem;
+$gutter-width: 1rem;
+/*$grid-padding: $gutter-width / 2;*/
+$grid-padding: 0;
+$container-style: fluid;

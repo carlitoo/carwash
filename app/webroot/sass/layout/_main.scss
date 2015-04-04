@@ -1,0 +1,87 @@
+/**
+ * CLASSES GÉNÉRIQUES POUR LE CONTENU
+ * - Largeur max grands écrans (960px)
+ * - Sous-titrage avec icônes
+ */
+
+// Grands écrans : div avec largeur fixe, centrée
+// Passe à 100% sur petits écrans
+.l-constrained {
+    position: relative;
+
+    @media screen and (min-width: 1025px) {
+        width: $width-constrained;
+        margin: 0 auto;
+    }
+    @media screen and (min-width: 1101px) {
+        width: $width-constrained-large;
+    }
+}
+
+// Titrages avec icônes
+.l-subtitle {
+    font-family: $font-titre;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    margin: 20px 0 10px;
+    padding-left: 30px;
+
+    & > a {
+        color: $rouge;
+        font-size: .77777em;
+    }
+}
+.l-subtitle--citroen { background-position: 0 0; }
+.l-subtitle--info { background-position: 0 -22px; }
+.l-subtitle--poids-lourds { background-position: 0 -44px; }
+.l-subtitle--default{
+    text-transform: uppercase;
+    color:  $noir;
+    font-family: $font-titre;
+    font-size: 18px;
+    font-weight: 400;
+}
+// titre par default
+.l-title{
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: $font-titre;
+    color: $rouge;
+    font-size: 40px;
+    font-weight: 400;
+}
+.l-title--small{
+    font-size: 18px; 
+}
+
+.l-title__count{
+    color: $noir;
+}
+
+.l-title__detail{
+    color: $noir;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+// style des liens par defaut
+
+.l-file-ariane{
+    margin-top: 40px;
+    font-family: $font-texte;
+    font-size: 14px;
+    font-weight: 700;
+    .l-link{
+        color: $rouge;
+        text-decoration: underline;
+    }
+    & > a{
+        color: $noir;
+    }
+}
+.l-link{
+    color: $rouge;
+    text-decoration: underline;
+}

@@ -1,0 +1,15 @@
+/**
+ * MIXINS (fonctions pour Sass)
+ */
+
+// Annuler les floats avant et après un élément contenant des enfants en float
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

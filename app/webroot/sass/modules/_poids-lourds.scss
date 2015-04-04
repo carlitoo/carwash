@@ -1,0 +1,85 @@
+.poids-lourds{ 
+    margin-top: 40px;
+    @include container;
+}
+
+.poids-lourds__left{
+    @include span-columns(6, 9);
+    @media screen and(max-width: 768px){
+        @include span-columns(9, 9);
+    }
+}
+
+.poids-lourds__left__img{
+    width: 200px;
+    height: 190px;
+    float: right;
+    margin-left: 10px;
+    & > img{
+        max-width: 100%;
+        max-height: 100%; 
+        overflow: hidden;
+    }
+}
+
+.poids-lourds__content{
+    margin: 0;
+    text-align: justify;
+}
+
+.poids-lourds__right{
+    @include span-columns(3 omega, 9);
+    @media screen and(max-width: 768px){
+        @include span-columns(9, 9);
+    }
+}
+
+.poids-lourds__right__temoignage{
+    position: relative;
+    margin-top: 20px;
+    padding: 20px;
+    color: $noir;    
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+// effet coin triangle 
+.poids-lourds__right .poids-lourds__content:before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    border-top: 3px solid $rouge;
+    border-left: 3px solid $rouge;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.poids-lourds__right .poids-lourds__content:after{
+    content: "";
+    position: absolute;
+    bottom:0;
+    right: 0;
+    border-bottom: 3px solid $rouge;
+    border-right: 3px solid $rouge;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.poids-lourds__right__img{
+    margin-top: 10px;
+    width: 100%;
+    & > img{
+        max-width: 100%;
+        overflow: hidden;
+        border-bottom: 2px solid $noir;
+    }
+}
+
+.poids-lourds__left .garage__description{
+    /*margin-bottom: 50px;*/
+}

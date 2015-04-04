@@ -1,0 +1,48 @@
+/**
+ * LISTE DE SERVICES
+ * - Grille 2 colonnes
+ * - Uniquement utilisée en page d'accueil ?
+ */
+
+// Conteneur grille, contrainte
+.services {
+    @extend .l-constrained;
+    margin-top: 40px;
+    @include container;
+}
+// Colonne pour une grille de 2 colonnes
+.services__column2 {    
+    @include span-columns(3, 6);
+    
+    &:nth-child(2) {
+        @include omega;
+    }
+}
+// Conteneur blanc
+.services__container {
+    background-color: $blanc;
+    @include clearfix();
+    
+    & > img {
+        float: left;
+        width: 33.333%;
+        margin-right: 20px;
+    }
+}
+// Conteneur texte
+.services__content {
+    padding: 20px;
+    margin: 0;
+    font-size: .875em;
+    line-height: 1.4em;
+    
+    & small {
+        font-weight: 700;
+    }
+}
+// Conteneur permettant de mettre en page un lien
+.services__link {
+    display: block;
+    margin-top: 30px;
+    text-align: right;
+}
